@@ -47,7 +47,7 @@ struct swift_enum_refactoring {
 
 extension swift_enum_refactoring {
     
-    // MARK: - FlexInfo
+    // MARK: - FlexStyle
     
     struct FlexStyle {
         let direction: FlexDirection
