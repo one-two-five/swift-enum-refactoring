@@ -57,6 +57,13 @@ extension swift_enum_refactoring {
     // MARK: - FlexDirection
     // You could also use associated values in this enum to pass the no of rows/columns
     
+    /* e.g
+        enum FlexDirection {
+            case row(rows: Int)
+            case column(Columns: Int)
+        }
+    */
+    
     enum FlexDirection {
         case row
         case column
