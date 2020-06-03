@@ -7,17 +7,18 @@ final class swift_enum_refactoringTests: XCTestCase {
         let expected = (
             """
             <div
-              className={classNames(
-                styles['c-optionList__items'],
-                styles[`c-optionList__items--column`]
-              )}
+                className={classNames(
+                    styles['c-optionList__items--6'],
+                    styles[`c-optionList__items--column`]
+                )}
             >
             </div>
             """
         )
         
-        let optionList = swift_enum_refactoring.OptionList(flexDirection: .column)
-        let result = optionList.makeHTML()
+        let style = swift_enum_refactoring.Style(direction: .column, items: 6)
+        let optionList = swift_enum_refactoring.OptionList(with: style)
+        let result = optionList.makeJSX()
         
         XCTAssertEqual(result, expected)
     }
@@ -27,17 +28,18 @@ final class swift_enum_refactoringTests: XCTestCase {
         let expected = (
             """
             <div
-              className={classNames(
-                styles['c-optionList__items'],
-                styles[`c-optionList__items--row`]
-              )}
+                className={classNames(
+                    styles['c-optionList__items--10'],
+                    styles[`c-optionList__items--row`]
+                )}
             >
             </div>
             """
         )
         
-        let optionList = swift_enum_refactoring.OptionList(flexDirection: .row)
-        let result = optionList.makeHTML()
+         let style = swift_enum_refactoring.Style(direction: .row, items: 10)
+               let optionList = swift_enum_refactoring.OptionList(with: style)
+               let result = optionList.makeJSX()
         
         XCTAssertEqual(result, expected)
     }
