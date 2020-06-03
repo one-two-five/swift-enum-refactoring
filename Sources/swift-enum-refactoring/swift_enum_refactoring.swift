@@ -42,16 +42,16 @@ const OptionList = props => {
 struct swift_enum_refactoring {
     
     // MARK: - Example (JSX is used in React)
-    let optionListJSX = OptionList(with: Style(direction: .column, items: 8)).makeJSX()
+    let optionListJSX = OptionList(with: FlexStyle(direction: .column, segments: 3)).makeJSX()
 }
 
 extension swift_enum_refactoring {
     
     // MARK: - FlexInfo
     
-    struct Style {
+    struct FlexStyle {
         let direction: FlexDirection
-        let items: Int
+        let segments: Int
     }
     
     // MARK: - FlexDirection
@@ -72,14 +72,14 @@ extension swift_enum_refactoring {
     // MARK: - OptionList
     
     struct OptionList {
-        let flexInfo: Style
+        let flexStyle: FlexStyle
         
-        init(with flexInfo: Style) {
-            self.flexInfo = flexInfo
+        init(with flexStyle: FlexStyle) {
+            self.flexStyle = flexStyle
         }
         
         func makeJSX() -> String {
-            return formatJSX(with: flexInfo.direction, items: flexInfo.items)
+            return formatJSX(with: flexStyle.direction, items: flexStyle.segments)
         }
             
         private func formatJSX(with flexDirection: FlexDirection, items: Int) -> String {

@@ -16,7 +16,7 @@ final class swift_enum_refactoringTests: XCTestCase {
             """
         )
         
-        let style = swift_enum_refactoring.Style(direction: .column, items: 6)
+        let style = swift_enum_refactoring.FlexStyle(direction: .column, segments: 6)
         let optionList = swift_enum_refactoring.OptionList(with: style)
         let result = optionList.makeJSX()
         
@@ -37,7 +37,7 @@ final class swift_enum_refactoringTests: XCTestCase {
             """
         )
         
-         let style = swift_enum_refactoring.Style(direction: .row, items: 10)
+        let style = swift_enum_refactoring.FlexStyle(direction: .row, segments: 10)
                let optionList = swift_enum_refactoring.OptionList(with: style)
                let result = optionList.makeJSX()
         
